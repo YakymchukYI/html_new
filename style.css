@@ -30,8 +30,8 @@ a{
     border-radius: 3px;
     transition: all .25s ease;
 }
-.nav-list > li a:hover{
-    border-bottom: 1px solid red;
+.nav-list > li:last-of-type a:hover{
+    background-color: #c9233a;
 }
 .nav-list li:last-of-type a svg{
     width: 1em;
