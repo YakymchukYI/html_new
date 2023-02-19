@@ -14,18 +14,43 @@ a {
 }
 
 .header {
+    height: 100vh;
+    /*height: calc(100vh - 40px);*/
+    box-sizing: border-box;
+    /*or*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+}
+
+.header::after {
+    content: "";
+    background: #0c3632;
+    position: absolute;
+    opacity: .85;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .25s ease;
+}
+
+.nav {
+    width: calc(100% - 40px);
+    position: absolute;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    padding: 0 20px;
-    background-color: black;
 }
 
-.logo-link {
-    display: flex;
-    height: 100%;
-    align-items: center;
+.logo-container {
+    line-height: 1.5;
 }
 
 .logo-img {
@@ -41,9 +66,10 @@ a {
     display: flex;
     padding: 0 10px;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
 }
+
 .nav-list li:last-of-type {
     padding-right: 0;
 }
@@ -64,6 +90,7 @@ a {
     transform: scaleX(0);
     transition: all .25s ease;
 }
+
 .nav-list-link:hover {
     color: #17baaa;
 }
@@ -75,6 +102,8 @@ a {
 .nav-list li:last-of-type a {
     display: flex;
     align-items: center;
+    font-size: 12px;
+    font-weight: bold;
     height: 30px;
     padding: 0 10px;
     background-color: #dd3d53;
@@ -83,7 +112,8 @@ a {
 }
 
 .heart-icon {
-    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 14px;
 }
 
 .nav-list li:last-of-type a:hover {
@@ -92,4 +122,70 @@ a {
 
 .nav-list li:last-of-type a svg {
     width: 1em;
+}
+
+.burger-icon {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+    cursor: pointer;
+}
+
+.nav-toggle {
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+
+.header-content {
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header-content-title {
+    font-size: 56px;
+    line-height: 84px;
+    color: white;
+}
+
+.header-content-title-green {
+    color: #17baaa;
+}
+
+.header-content-btn {
+    display: block;
+    background: #17baaa;
+    color: #fff;
+    font-size: 14px;
+    font-size: .875rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 100%;
+    min-height: 40px;
+    transition: all .25s ease;
+}
+
+.header-content-btn:hover {
+    background: #129185;
+}
+
+@media screen and (max-width: 992px) {
+    .nav-list {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
 }
